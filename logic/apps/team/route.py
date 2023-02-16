@@ -20,13 +20,13 @@ def get():
     for t in teams:
         result.append(dto.team_to_dict(t))
 
-    return result, 200
+    return result[0], 200
 
 
 @blue_print.route('/', methods=['POST'])
 def post():
 
-    dict_yaml = yaml.load(request.body, Loader=yaml.Loader)
+    dict_yaml = yaml.load(request.data, Loader=yaml.Loader)
 
     m = dto.dict_to_team(dict_yaml)
     service.add(m)

@@ -1,0 +1,14 @@
+name: team rocket
+dittos:
+  - name: ditto1
+    request:
+      url: /api/v1/examples
+      method: GET
+      headers: 
+        autorization bearer: token
+    response:
+      status: 200
+      body: |
+        {
+          "asd": 123
+        }

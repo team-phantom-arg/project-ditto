@@ -18,7 +18,7 @@ def dict_to_team(o: Dict[str, object]) -> Team:
             ),
             response=Response(
                 status=dict_ditto['response'].get('status', 200),
-                body=dict_ditto['request'].get('body', '')
+                body=dict_ditto['response'].get('body', '')
             )
         )
 
