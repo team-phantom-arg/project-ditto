@@ -20,3 +20,14 @@ def get_all() -> list[Team]:
 
     global _TEAMS
     return _TEAMS
+
+
+def get(name: str) -> Team:
+
+    global _TEAMS
+
+    for t in _TEAMS:
+        if t.name == name:
+            return t
+
+    return None

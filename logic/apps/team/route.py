@@ -1,13 +1,7 @@
-from flask import Blueprint, request
-from flask.json import jsonify
-from logic.apps.example.error import ExampleError
-from logic.apps.example import dto
-from logic.apps.example import service
-from logic.libs.exception.exception import AppException
-
 import yaml
+from flask import Blueprint, request
+
 from logic.apps.team import dto, service
-from logic.apps.team.model import Team
 
 blue_print = Blueprint('team', __name__, url_prefix='/api/v1/teams')
 
