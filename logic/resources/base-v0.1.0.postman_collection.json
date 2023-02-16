@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "89190cbb-da38-4beb-a04d-b38fda4bb728",
+		"name": "base-v0.1.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "examples",
+							"item": [
+								{
+									"name": "post_examples",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonData = JSON.parse(responseBody);",
+													"pm.collectionVariables.set(\"token\", jsonData.token);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"date_time\": \"2021-01-01T23:19:39.252103\",\n    \"double\": 123.123123,\n    \"integer\": 123,\n    \"string\": \"asdasd123\",\n    \"uuid\": \"f90ee43c-f762-4b08-87e5-9660d0ff43b6\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/examples",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"examples"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get_examples",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/examples/all",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"examples",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get_error_business",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/examples/errors/business",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"examples",
+												"errors",
+												"business"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get_error_unknow",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/examples/errors/unknow",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"examples",
+												"errors",
+												"unknow"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "app",
+			"item": [
+				{
+					"name": "alive",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/vars",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"vars"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000"
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "id_descuento_ejemplo",
+			"value": ""
+		},
+		{
+			"key": "id_descuento_100_pe",
+			"value": ""
+		},
+		{
+			"key": "id_descuento_10_por",
+			"value": ""
+		}
+	]
+}

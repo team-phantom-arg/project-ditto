@@ -1,0 +1,8 @@
+VERSION: local
+PYTHON_HOST: localhost
+PYTHON_PORT: 5000
+LOGS_LEVEL: INFO
+LOGS_PATH: /tmp/base/logs.log
+LOGS_BACKUPS: 3
+DB_SQLITE_LOGS: True
+DB_SQLITE_PATH: /tmp/base/sqlite.db
