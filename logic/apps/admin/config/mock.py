@@ -12,5 +12,4 @@ def setup_mocks(app):
 
         ditto = service.get_ditto_match_request(request)
         if ditto:
-            print('encontre ditto')
             return service.eval_ditto(ditto)

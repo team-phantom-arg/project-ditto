@@ -1,4 +1,6 @@
-from flask import Request
+import json
+
+from flask import Request, Response, jsonify
 
 from logic.apps.ditto.model import Ditto
 from logic.apps.team import service as team_service
@@ -32,5 +34,23 @@ def get_ditto_match_request(request: Request) -> bool:
     return None
 
 
+def _is_json(body: str) -> bool:
+    try:
+        json.loads(body)
+        return True
+
+    except Exception:
+        return False
+
+
 def eval_ditto(ditto: Ditto):
-    return ditto.response.body, ditto.response.status
+
+    body = ditto.response.body
+    body_final = json.loads(body) if _is_json(body) else body
+
+    headers = ditto.response.headers
+
+    if _is_json(body_final):
+        headers['Content-Type'] = 'application/json'
+
+    return body_final, ditto.response.status, headers

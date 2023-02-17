@@ -13,6 +13,7 @@ class Request:
 class Response:
     status: int = None
     body: str = None
+    headers: dict[str, object] = field(default_factory={})
 
 
 @dataclass

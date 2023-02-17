@@ -2,7 +2,7 @@ from flask import Flask
 from werkzeug.exceptions import HTTPException
 
 from logic.libs.exception.exception import AppException, UnknownException
-# from logic.libs.logger.logger import logger
+from logic.libs.logger import logger
 
 
 def add_decorators(app: Flask):
@@ -15,12 +15,12 @@ def add_decorators(app: Flask):
 
     @app.errorhandler(AppException)
     def handle_business_exception(ae: AppException):
-        # logger.warning(ae.to_json())
+        logger.logger.warning(ae.to_json())
         return ae.to_json(), 409
 
     @app.errorhandler(Exception)
     def handle_exception(e: Exception):
-        # logger.exception(e)
+        logger.logger.exception(e)
         return UnknownException(e).to_json(), 500
 
     @app.after_request

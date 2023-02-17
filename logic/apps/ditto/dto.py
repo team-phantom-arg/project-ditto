@@ -17,7 +17,8 @@ def ditto_to_dict(d: Ditto) -> dict[str, object]:
 
     response = {
         'status': d.response.status,
-        'body': d.response.body
+        'body': d.response.body,
+        'headers': d.response.headers
     }
 
     return {
