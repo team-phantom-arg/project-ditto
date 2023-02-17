@@ -21,3 +21,8 @@ def get(team_name: str, ditto_name: str) -> Ditto:
             return d
 
     return None
+
+
+def list_all(team_name: str) -> list[Ditto]:
+
+    return [d.name for d in get_all(team_name)]

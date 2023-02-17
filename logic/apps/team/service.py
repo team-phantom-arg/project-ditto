@@ -22,6 +22,12 @@ def get_all() -> list[Team]:
     return _TEAMS
 
 
+def list_all() -> list[str]:
+
+    global _TEAMS
+    return [t.name for t in _TEAMS]
+
+
 def get(name: str) -> Team:
 
     global _TEAMS
@@ -31,3 +37,12 @@ def get(name: str) -> Team:
             return t
 
     return None
+
+
+def delete(name: str):
+
+    global _TEAMS
+
+    for t in list(_TEAMS):
+        if t.name == name:
+            _TEAMS.remove(t)
